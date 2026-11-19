@@ -1,0 +1,21 @@
+{
+  "source": "builtin",
+  "applications": [
+    {
+      "app_key": "com.example.openvroverlay.template",
+      "launch_type": "binary",
+      "binary_path_windows": "..\\..\\OpenVROverlayTemplate.exe",
+      "is_dashboard_overlay": true,
+      "strings": {
+        "en_us": {
+          "name": "OpenVR Overlay Template",
+          "description": "Reusable OpenVR overlay and dashboard template"
+        },
+        "ja_jp": {
+          "name": "OpenVR Overlay Template",
+          "description": "OpenVR オーバーレイ・ダッシュボード用テンプレート"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "controller_type": "vive_controller",
+  "name": "Vlick VR Keyboard bindings for HTC Vive Controllers",
+  "description": "Left trackpad click toggles the overlay; triggers press keys; grips move it; while either grip is moving the keyboard, use the right trackpad to adjust distance.",
+  "bindings": {
+    "/actions/global": {
+      "sources": [
+        {
+          "path": "/user/hand/left/input/trackpad",
+          "mode": "button",
+          "inputs": {
+            "click": {
+              "output": "/actions/global/in/toggle_overlay"
+            }
+          }
+        }
+      ]
+    },
+    "/actions/overlay": {
+      "sources": [
+        {
+          "path": "/user/hand/left/input/trigger",
+          "mode": "button",
+          "inputs": {
+            "click": {
+              "output": "/actions/overlay/in/primary"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trigger",
+          "mode": "button",
+          "inputs": {
+            "click": {
+              "output": "/actions/overlay/in/primary"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/grip",
+          "mode": "button",
+          "inputs": {
+            "click": {
+              "output": "/actions/overlay/in/grab"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/grip",
+          "mode": "button",
+          "inputs": {
+            "click": {
+              "output": "/actions/overlay/in/grab"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trackpad",
+          "mode": "trackpad",
+          "inputs": {
+            "position": {
+              "output": "/actions/overlay/in/adjust_distance"
+            }
+          }
+        }
+      ],
+      "haptics": [
+        {
+          "path": "/user/hand/left/output/haptic",
+          "output": "/actions/overlay/out/haptic"
+        },
+        {
+          "path": "/user/hand/right/output/haptic",
+          "output": "/actions/overlay/out/haptic"
+        }
+      ]
+    },
+    "/actions/blocker": {
+      "sources": [
+        {
+          "path": "/user/hand/left/input/trigger",
+          "mode": "trigger",
+          "inputs": {
+            "pull": { "output": "/actions/blocker/in/block_scalar" }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trigger",
+          "mode": "trigger",
+          "inputs": {
+            "pull": { "output": "/actions/blocker/in/block_scalar" }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/grip",
+          "mode": "button",
+          "inputs": {
+            "click": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/grip",
+          "mode": "button",
+          "inputs": {
+            "click": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/trackpad",
+          "mode": "trackpad",
+          "inputs": {
+            "position": { "output": "/actions/blocker/in/block_axis" },
+            "click": { "output": "/actions/blocker/in/block_boolean" },
+            "touch": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trackpad",
+          "mode": "trackpad",
+          "inputs": {
+            "position": { "output": "/actions/blocker/in/block_axis" },
+            "click": { "output": "/actions/blocker/in/block_boolean" },
+            "touch": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/application_menu",
+          "mode": "button",
+          "inputs": {
+            "click": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/application_menu",
+          "mode": "button",
+          "inputs": {
+            "click": { "output": "/actions/blocker/in/block_boolean" }
+          }
+        }
+      ]
+    }
+  }
+}
